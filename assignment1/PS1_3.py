@@ -5,7 +5,7 @@ Created on Tue Oct 17 14:51:09 2023
 @author: zgx
 """
 """
-注：该程序认为杨辉三角的行数从第1行开始计算，而不是第0行
+注：aaaa
 """
 
 import math as math

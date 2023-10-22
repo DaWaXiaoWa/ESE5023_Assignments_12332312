@@ -2,10 +2,11 @@
 """
 Created on Tue Oct 17 22:19:42 2023
 
-@author: Dawol
+@author: zgx
 """
 
 import matplotlib.pyplot as plt
+import numpy as np
 
 digit="123456789"
 
@@ -57,12 +58,55 @@ allpossible_string=gen_allpossible_string(digit)
 def Find_expression(compare):
     expression=[]
     for elements in allpossible_string:
-        result = eval(elements)
+        result = eval(elements) #learn eval() from CSDN
         if result==compare:
             expression.append(elements) 
     for expr in expression:
-        print(expr)
+        print(expr,"=",compare)
 
-target=100
+'''用来算长度 '''
+
+def find_expression(compare):
+    expression=[]
+    for elements in allpossible_string:
+        result = eval(elements) #learn eval() from CSDN
+        if result==compare:
+            expression.append(elements) 
+    return len(expression)
+
+target=50
 Find_expression(target)
+
+Total_solutions = []
+
+for i in range(1, 101):
+    total=find_expression(i)
+    Total_solutions.append(total)
+
+def find_max_value(list0):
+    max_value=max(list0)
+    max_list=[]
+    print("Number(s) yields the maximum of Total_solution are:",end=" ")
+    for i in range(len(list0)):
+        if list0[i]==max_value:
+            max_list.append(i+1)
+    print(max_list)
+
+def find_min_value(list1):
+    min_value=min(list1)
+    min_list=[]
+    print("Number(s) yields the minimum of Total_solution are:",end=" ")
+    for i in range(len(list1)):
+        if list1[i]==min_value:
+            min_list.append(i+1)
+    print(min_list)
+            
+print("\n")
+print("Total solutions of each number:",Total_solutions)
+print("\n")
+find_max_value(Total_solutions)
+print("\n")
+find_min_value(Total_solutions)
+
+
             

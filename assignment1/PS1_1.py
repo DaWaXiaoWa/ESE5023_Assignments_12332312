@@ -4,6 +4,7 @@ Spyder Editor
 
 This is a temporary script file.
 """
+import random as rand
 
 def print_values(a,b,c):
     if a>b :
@@ -23,4 +24,8 @@ def print_values(a,b,c):
         else:
             print(c,b,a)
 
-print_values(1,2,3)
+x=rand.randint(0,90)
+y=rand.randint(0,90)
+z=rand.randint(0,90)
+
+print_values(x,y,z)
